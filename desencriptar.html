@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Encriptador de texto</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="stily.css">
+    <link rel="icon" href="logonav.jpg">
+</head>
+
+<body>
+    <header>
+        <img class="logo" src="Logo.svg">
+    </header>
+
+    <main>
+
+        <div>
+            <div>
+                <div>
+                    <input placeholder="Ingrese el texto aquí" id="mensaje"></input>
+                    <script>
+                        setInterval(function () {
+                            if (document.getElementById("mensaje").value == "") {
+                                document.getElementById("secondary-data").style.display = "block";
+                                document.getElementById("principal-data").style.display = "none";
+                            }
+                        }, 30000);
+                    </script>
+                    <a class="especificaciones">Solo letras minúsculas y sin acento</a>
+                </div>
+            </div>
+            <div id="botones">
+                <button class="boton-encriptar" onclick="encriptar()">Encriptar</button>
+                <button class="boton-desencriptar" onclick="desencriptar()">Desencriptar</button>
+            </div>
+            <div id="cuadrado"></div>
+        </div>
+
+        <div id="principal-data" style="display: none;">
+            <p placeholder="mensaje encriptado" id="mensaje-encriptado"></p>
+            <button id="boton-copiar" onclick="copiar('mensaje-encriptado')">Copiar</button>
+        </div>
+
+        <div id="secondary-data" style="display: block;">
+            <div id="invisible">
+
+                <img class="muneco" src="Muñeco.svg">
+
+                <div id="medidas">
+                    <p placeholder="mensaje encriptado" id="mensaje-encriptado"></p>
+                    <h2 id="resalta">Ningún mensaje fue encontrado</h2>
+                </div>
+
+            </div>
+        </div>
+
+
+    </main>
+    <script src="encriptador.js"></script>
+</body>
+
+</html>
